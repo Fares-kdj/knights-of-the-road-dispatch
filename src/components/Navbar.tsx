@@ -1,7 +1,8 @@
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTheme } from "@/hooks/use-theme";
 
 const navLinks = [
   { label: "الرئيسية", href: "/" },
@@ -14,6 +15,7 @@ const navLinks = [
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <nav className="fixed top-0 right-0 left-0 z-50 glass-card border-b border-border/50">
@@ -38,6 +40,13 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-3">
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded-md text-muted-foreground hover:text-primary transition-colors"
+            aria-label="تبديل الوضع"
+          >
+            {theme === "light" ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+          </button>
           <a href="tel:+213000000000">
             <Button size="sm" className="gold-gradient text-primary-foreground font-bold gap-2">
               <Phone className="w-4 h-4" />
@@ -52,9 +61,18 @@ const Navbar = () => {
         </div>
 
         {/* Mobile toggle */}
-        <button className="md:hidden text-foreground" onClick={() => setOpen(!open)}>
-          {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        <div className="flex md:hidden items-center gap-2">
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded-md text-muted-foreground hover:text-primary transition-colors"
+            aria-label="تبديل الوضع"
+          >
+            {theme === "light" ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+          </button>
+          <button className="text-foreground" onClick={() => setOpen(!open)}>
+            {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
