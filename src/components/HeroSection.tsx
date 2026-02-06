@@ -9,7 +9,7 @@ const HeroSection = () => {
       {/* Background */}
       <div className="absolute inset-0">
         <img src={heroBg} alt="فرسان الطريق" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/50" />
       </div>
 
       <div className="relative z-10 container mx-auto px-4 text-center space-y-8 pt-20">
