@@ -51,6 +51,51 @@
     --sidebar-border: 40 20% 88%;
     --sidebar-ring: 40 85% 50%;
   }
+
+  .dark {
+    --background: 220 20% 7%;
+    --foreground: 40 20% 95%;
+
+    --card: 220 18% 10%;
+    --card-foreground: 40 20% 95%;
+
+    --popover: 220 18% 10%;
+    --popover-foreground: 40 20% 95%;
+
+    --primary: 40 85% 55%;
+    --primary-foreground: 220 20% 7%;
+
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 40 20% 90%;
+
+    --muted: 220 15% 18%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 40 70% 45%;
+    --accent-foreground: 220 20% 7%;
+
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 40 85% 55%;
+
+    --gold-glow: 40 90% 60%;
+    --gold-dim: 40 50% 30%;
+    --surface-elevated: 220 18% 12%;
+    --whatsapp: 142 70% 45%;
+    --whatsapp-foreground: 142 70% 90%;
+
+    --sidebar-background: 220 18% 10%;
+    --sidebar-foreground: 40 20% 90%;
+    --sidebar-primary: 40 85% 55%;
+    --sidebar-primary-foreground: 220 20% 7%;
+    --sidebar-accent: 220 15% 15%;
+    --sidebar-accent-foreground: 40 20% 90%;
+    --sidebar-border: 220 15% 18%;
+    --sidebar-ring: 40 85% 55%;
+  }
 }
 
 @layer base {
@@ -84,6 +129,11 @@
     background: hsl(0 0% 100% / 0.85);
     backdrop-filter: blur(20px);
     border: 1px solid hsl(40 85% 50% / 0.15);
+  }
+
+  .dark .glass-card {
+    background: hsl(220 18% 10% / 0.7);
+    border: 1px solid hsl(40 85% 55% / 0.1);
   }
 
   .gold-border-glow {
